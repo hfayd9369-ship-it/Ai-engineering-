@@ -1,0 +1,39 @@
+:root {
+  --font-sans-ar: "IBM Plex Sans Arabic", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono-tech: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans-ar);
+    scroll-behavior: smooth;
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: var(--font-mono-tech);
+  }
+
+  /* Tabular numerals for aligned dashboard counters and timelines */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Optical balance on headlines */
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
